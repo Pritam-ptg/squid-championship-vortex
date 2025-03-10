@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Brain, FileCode, Dice, Mic, Star, Users, LayoutGrid, Bug, Lock } from 'lucide-react';
+import { Brain, FileCode, Dice1, Mic, Star, Users, LayoutGrid, Bug, Lock } from 'lucide-react';
 
 type Event = {
   id: number;
@@ -40,7 +39,7 @@ const EventsSection = () => {
       id: 3,
       title: "54 Cards",
       day: 1,
-      icon: <Dice className="h-6 w-6" />,
+      icon: <Dice1 className="h-6 w-6" />,
       description: "A strategic card game that tests your memory, pattern recognition, and decision-making under pressure. Every card matters in this mental battleground.",
       color: "championGold",
       time: "03:30 PM - 05:30 PM",
