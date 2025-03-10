@@ -150,7 +150,7 @@ const EventsSection = () => {
             <div
               key={event.id}
               className={cn(
-                "glass-card rounded-lg overflow-hidden transition-all duration-500 group",
+                "glass-card rounded-lg overflow-hidden transition-all duration-500 group cursor-pointer",
                 expandedEvent === event.id ? "md:col-span-2 md:row-span-2" : "",
                 `hover:border-${event.color}/50`
               )}
@@ -158,7 +158,7 @@ const EventsSection = () => {
             >
               <div className="p-6">
                 <div className="flex justify-between items-start mb-6">
-                  <div className={`w-12 h-12 rounded-full bg-${event.color}/20 flex items-center justify-center`}>
+                  <div className={`w-12 h-12 rounded-full bg-${event.color}/20 flex items-center justify-center text-${event.color}`}>
                     {event.icon}
                   </div>
                   <span className="text-sm text-white/60">{event.time}</span>
