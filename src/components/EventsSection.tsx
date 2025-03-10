@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+
+import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Brain, FileCode, Dice1, Mic, Star, Users, LayoutGrid, Bug, Lock } from 'lucide-react';
 
@@ -158,9 +159,7 @@ const EventsSection = () => {
               <div className="p-6">
                 <div className="flex justify-between items-start mb-6">
                   <div className={`w-12 h-12 rounded-full bg-${event.color}/20 flex items-center justify-center`}>
-                    {React.cloneElement(event.icon as React.ReactElement, { 
-                      className: `text-${event.color}` 
-                    })}
+                    {event.icon}
                   </div>
                   <span className="text-sm text-white/60">{event.time}</span>
                 </div>

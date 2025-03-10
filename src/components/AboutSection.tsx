@@ -1,60 +1,62 @@
 
-import React from 'react';
-import { Trophy, Clock, Users, Zap } from 'lucide-react';
+import { cn } from "@/lib/utils";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 md:py-28 bg-darkAccent relative overflow-hidden">
+    <section id="about" className="py-20 md:py-28 bg-darkAccent relative">
       {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-6 bg-gradient-to-r from-squidPink via-squidGreen to-championGold opacity-40"></div>
-      <div className="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-squidPink/10 filter blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-squidPink via-squidGreen to-championGold opacity-20"></div>
+      <div className="absolute top-0 left-0 w-80 h-80 bg-squidGreen/10 rounded-full filter blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-squidPink/10 rounded-full filter blur-3xl"></div>
       
       <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-4xl mx-auto text-center reveal">
-          <div className="inline-block px-3 py-1 mb-6 bg-white/5 rounded-full border border-white/10 text-squidPink text-sm">
-            ABOUT THE EVENT
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12 reveal">
+            <div className="inline-block px-3 py-1 mb-6 bg-white/5 rounded-full border border-white/10">
+              <span className="text-squidPink text-sm">ABOUT THE EVENT</span>
+            </div>
+            
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 text-white">
+              Where <span className="text-squidGreen">Technology</span> Meets <span className="text-squidPink">Challenge</span>
+            </h2>
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-8 text-white">
-            The Ultimate <span className="text-squidPink">Challenge</span> Awaits
-          </h2>
-          
-          <p className="text-lg text-white/80 mb-12 leading-relaxed">
-            Welcome to the <span className="text-squidPink font-semibold">Squid Championship</span> - a high-stakes competition where your skills, strategy, and survival instincts will be tested to their limits. Inspired by the intensity of Squid Game and the glory of championships, this 3-day extravaganza brings together technical challenges, cultural showcases, and mind-bending games that will push you beyond your comfort zone. Only the fearless will survive, only the best will triumph. Are you ready to play?
-          </p>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-            <div className="glass-card p-6 rounded-lg text-center transition-transform hover:scale-105">
-              <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-squidPink/20 flex items-center justify-center">
-                <Trophy className="text-squidPink" size={24} />
-              </div>
-              <h3 className="font-semibold text-white mb-1">₹50,000</h3>
-              <p className="text-sm text-white/60">Prize Pool</p>
-            </div>
+          <div className="glass-card p-8 md:p-10 rounded-lg reveal">
+            <p className="text-white/90 text-lg md:text-xl leading-relaxed">
+              <span className="text-squidPink font-semibold">Squid Championship</span> is an adrenaline-fueled three-day extravaganza that combines the high-stakes intensity of Squid Game with the glory of championship competition. Participants will navigate through a series of challenging technical puzzles, mind-bending games, and cultural showcases designed to test their limits. With elimination rounds reminiscent of the famous series but with a college-friendly twist, only the most skilled, strategic, and resilient competitors will survive to claim the ultimate prize and championship title. Are you ready to play?
+            </p>
             
-            <div className="glass-card p-6 rounded-lg text-center transition-transform hover:scale-105">
-              <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-squidGreen/20 flex items-center justify-center">
-                <Clock className="text-squidGreen" size={24} />
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10">
+              <div className={cn(
+                "p-4 rounded-lg text-center",
+                "bg-gradient-to-b from-squidPink/20 to-transparent"
+              )}>
+                <div className="text-3xl font-bold text-white mb-1">9+</div>
+                <div className="text-white/70 text-sm">Unique Events</div>
               </div>
-              <h3 className="font-semibold text-white mb-1">3 Days</h3>
-              <p className="text-sm text-white/60">Of Excitement</p>
-            </div>
-            
-            <div className="glass-card p-6 rounded-lg text-center transition-transform hover:scale-105">
-              <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-championGold/20 flex items-center justify-center">
-                <Users className="text-championGold" size={24} />
+              
+              <div className={cn(
+                "p-4 rounded-lg text-center",
+                "bg-gradient-to-b from-squidGreen/20 to-transparent"
+              )}>
+                <div className="text-3xl font-bold text-white mb-1">3</div>
+                <div className="text-white/70 text-sm">Action Days</div>
               </div>
-              <h3 className="font-semibold text-white mb-1">500+</h3>
-              <p className="text-sm text-white/60">Participants</p>
-            </div>
-            
-            <div className="glass-card p-6 rounded-lg text-center transition-transform hover:scale-105">
-              <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-championSilver/20 flex items-center justify-center">
-                <Zap className="text-championSilver" size={24} />
+              
+              <div className={cn(
+                "p-4 rounded-lg text-center",
+                "bg-gradient-to-b from-championGold/20 to-transparent"
+              )}>
+                <div className="text-3xl font-bold text-white mb-1">₹1L+</div>
+                <div className="text-white/70 text-sm">Prize Pool</div>
               </div>
-              <h3 className="font-semibold text-white mb-1">9 Events</h3>
-              <p className="text-sm text-white/60">To Conquer</p>
+              
+              <div className={cn(
+                "p-4 rounded-lg text-center",
+                "bg-gradient-to-b from-white/10 to-transparent"
+              )}>
+                <div className="text-3xl font-bold text-white mb-1">20+</div>
+                <div className="text-white/70 text-sm">Colleges</div>
+              </div>
             </div>
           </div>
         </div>

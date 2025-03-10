@@ -1,97 +1,100 @@
 
-import React, { useState, useEffect } from 'react';
-import { cn } from "@/lib/utils";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const Navigation = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
+    { name: "Home", href: "#" },
     { name: "About", href: "#about" },
     { name: "Events", href: "#events" },
     { name: "Sponsors", href: "#sponsors" },
-    { name: "Organizers", href: "#organizers" },
+    { name: "Team", href: "#organizers" },
     { name: "FAQ", href: "#faq" },
-    { name: "Contact", href: "#footer" },
   ];
 
   return (
-    <header
+    <nav 
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4",
-        isScrolled 
-          ? "bg-darkAccent/80 backdrop-blur-md shadow-md" 
-          : "bg-transparent"
+        "fixed top-0 left-0 w-full z-50 transition-all duration-300",
+        isScrolled ? "py-3 bg-dark/90 backdrop-blur-md shadow-md" : "py-5"
       )}
     >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <a href="#" className="text-squidPink font-heading font-bold text-2xl">
-          SQUID<span className="text-squidGreen">CHAMP</span>
-        </a>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="font-medium text-white opacity-80 hover:opacity-100 hover:text-squidPink transition-all duration-200"
-            >
-              {link.name}
-            </a>
-          ))}
-          <a
-            href="#register"
-            className="bg-squidPink text-white px-6 py-2 rounded hover:bg-squidPink/80 transition-all duration-300 animate-pulse-glow"
-          >
-            Register
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="flex items-center justify-between">
+          <a href="#" className="text-white font-bold text-2xl">
+            <span className="text-squidPink">Squid</span> Championship
           </a>
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-white"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <nav className="md:hidden bg-darkAccent/90 backdrop-blur-lg">
-          <div className="flex flex-col py-4 space-y-4 px-6">
-            {navLinks.map((link) => (
+          
+          {/* Desktop navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link, index) => (
               <a
-                key={link.name}
+                key={index}
                 href={link.href}
-                className="font-medium text-white py-2 opacity-80 hover:opacity-100 hover:text-squidPink transition-all duration-200"
-                onClick={() => setMobileMenuOpen(false)}
+                className="text-white/80 hover:text-squidPink transition-colors duration-300"
               >
                 {link.name}
               </a>
             ))}
             <a
               href="#register"
-              className="bg-squidPink text-white px-6 py-2 rounded hover:bg-squidPink/80 transition-all duration-300 text-center"
-              onClick={() => setMobileMenuOpen(false)}
+              className="bg-squidPink text-white px-5 py-2 rounded-full hover:bg-squidPink/90 transition-colors duration-300"
             >
-              Register
+              Register Now
             </a>
           </div>
-        </nav>
-      )}
-    </header>
+          
+          {/* Mobile menu button */}
+          <button
+            className="md:hidden text-white focus:outline-none"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </div>
+      
+      {/* Mobile navigation */}
+      <div
+        className={cn(
+          "fixed inset-0 bg-dark z-40 flex flex-col p-10 md:hidden transition-transform duration-300 ease-in-out pt-24",
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        )}
+      >
+        <div className="flex flex-col space-y-6">
+          {navLinks.map((link, index) => (
+            <a
+              key={index}
+              href={link.href}
+              className="text-white/80 hover:text-squidPink transition-colors duration-300 text-lg"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {link.name}
+            </a>
+          ))}
+          <a
+            href="#register"
+            className="bg-squidPink text-white px-5 py-3 rounded-full hover:bg-squidPink/90 transition-colors duration-300 text-center mt-4"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Register Now
+          </a>
+        </div>
+      </div>
+    </nav>
   );
 };
 
