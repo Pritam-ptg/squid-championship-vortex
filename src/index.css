@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -67,6 +68,11 @@
     @apply backdrop-blur-lg bg-white/5 border border-white/10 shadow-lg;
   }
   
+  .enhanced-glass-card {
+    @apply backdrop-blur-xl bg-white/8 border border-white/15 shadow-xl;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.05);
+  }
+  
   .text-stroke {
     -webkit-text-stroke: 1px white;
   }
@@ -118,6 +124,12 @@
   .gold-glow {
     text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
   }
+  
+  .theme-enhanced {
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(255, 0, 135, 0.1) 0%, transparent 40%),
+      radial-gradient(circle at 70% 60%, rgba(21, 245, 186, 0.1) 0%, transparent 40%);
+  }
 }
 
 /* Animations */
@@ -137,8 +149,14 @@
   0%, 100% {
     transform: translateY(0) rotate(0deg);
   }
+  25% {
+    transform: translateY(-10px) rotate(2deg);
+  }
   50% {
     transform: translateY(-15px) rotate(5deg);
+  }
+  75% {
+    transform: translateY(-7px) rotate(3deg);
   }
 }
 
@@ -168,6 +186,27 @@
   }
   50% {
     transform: rotate(3deg);
+  }
+}
+
+/* New animations */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.5;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.5);
   }
 }
 
