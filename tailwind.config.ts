@@ -123,6 +123,14 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
+        "wiggle": {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
+        },
+        "spin-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -134,6 +142,14 @@ export default {
         "slide-in-right": "slide-in-right 0.5s ease-out",
         "pulse-glow": "pulse-glow 2s infinite",
         "float": "float 3s ease-in-out infinite",
+        "wiggle": "wiggle 2s ease-in-out infinite",
+        "spin-slow": "spin-slow 15s linear infinite",
+      },
+      backgroundImage: {
+        'grid-pattern': 'linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)',
+      },
+      backgroundSize: {
+        'grid': '20px 20px',
       },
     },
   },

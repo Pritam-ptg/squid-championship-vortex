@@ -8,6 +8,7 @@ import OrganizersSection from "@/components/OrganizersSection";
 import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
+import Doodles from "@/components/Doodles";
 
 const Index = () => {
   useEffect(() => {
@@ -32,6 +33,7 @@ const Index = () => {
 
   return (
     <div className="bg-dark text-white min-h-screen overflow-x-hidden">
+      <Doodles />
       <Navigation />
       <HeroSection />
       <AboutSection />
