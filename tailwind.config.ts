@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -67,13 +66,13 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Squid Game + Championship theme colors
-        squidPink: "#FF0087",
-        squidGreen: "#15F5BA",
-        squidDarkBlue: "#081B2E",
-        championGold: "#FFD700",
-        championSilver: "#C0C0C0",
-        championBronze: "#CD7F32",
+        squidPink: "#9b87f5",
+        squidGreen: "#7E69AB",
+        squidPurple: "#6E59A5",
+        squidDarkBlue: "#1A1F2C",
+        championGold: "#E5DEFF",
+        championSilver: "#D6BCFA",
+        championBronze: "#8B5CF6",
         dark: "#0E1117",
         darkAccent: "#181A20",
       },
@@ -113,11 +112,23 @@ export default {
         },
         "pulse-glow": {
           "0%, 100%": { 
-            boxShadow: "0 0 10px rgba(255, 0, 135, 0.5), 0 0 20px rgba(255, 0, 135, 0.3)" 
+            boxShadow: "0 0 10px rgba(155, 135, 245, 0.5), 0 0 20px rgba(155, 135, 245, 0.3)" 
           },
           "50%": { 
-            boxShadow: "0 0 20px rgba(255, 0, 135, 0.8), 0 0 40px rgba(255, 0, 135, 0.5)" 
+            boxShadow: "0 0 20px rgba(155, 135, 245, 0.8), 0 0 40px rgba(155, 135, 245, 0.5)" 
           },
+        },
+        "travel-down": {
+          "0%": { transform: "translateY(-100%)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" }
+        },
+        "travel-up": {
+          "0%": { transform: "translateY(100%)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" }
+        },
+        "glow-pulse": {
+          "0%, 100%": { filter: "brightness(1)" },
+          "50%": { filter: "brightness(1.5)" }
         },
         "float": {
           "0%, 100%": { transform: "translateY(0)" },
@@ -144,6 +155,9 @@ export default {
         "float": "float 3s ease-in-out infinite",
         "wiggle": "wiggle 2s ease-in-out infinite",
         "spin-slow": "spin-slow 15s linear infinite",
+        "travel-down": "travel-down 0.5s ease-out",
+        "travel-up": "travel-up 0.5s ease-out",
+        "glow-pulse": "glow-pulse 2s infinite"
       },
       backgroundImage: {
         'grid-pattern': 'linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)',
