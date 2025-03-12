@@ -16,16 +16,16 @@
     --popover: 224 71% 4%;
     --popover-foreground: 213 31% 91%;
 
-    --primary: 260 80% 74%;
+    --primary: 332 100% 50%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 260 35% 54%;
+    --secondary: 170 91% 53%;
     --secondary-foreground: 222 47% 11%;
 
     --muted: 223 47% 11%;
     --muted-foreground: 215.4 16.3% 56.9%;
 
-    --accent: 260 100% 94%;
+    --accent: 44 100% 50%;
     --accent-foreground: 222 47% 11%;
 
     --destructive: 0 84.2% 60.2%;
@@ -33,7 +33,7 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 260 80% 74%;
+    --ring: 332 100% 50%;
 
     --radius: 0.5rem;
 
@@ -68,11 +68,6 @@
     @apply backdrop-blur-lg bg-white/5 border border-white/10 shadow-lg;
   }
   
-  .enhanced-glass-card {
-    @apply backdrop-blur-xl bg-white/8 border border-white/15 shadow-xl;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.05);
-  }
-  
   .text-stroke {
     -webkit-text-stroke: 1px white;
   }
@@ -96,7 +91,7 @@
   }
   
   .svg-shadow {
-    filter: drop-shadow(0px 0px 8px rgba(155, 135, 245, 0.6));
+    filter: drop-shadow(0px 0px 8px rgba(255, 0, 135, 0.6));
   }
   
   .scrollbar-hide {
@@ -106,65 +101,6 @@
   
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
-  }
-  
-  .doodle-accent {
-    @apply border-2 border-squidPink shadow-lg;
-    box-shadow: 0 0 15px rgba(155, 135, 245, 0.5);
-  }
-  
-  .squid-glow {
-    text-shadow: 0 0 10px rgba(155, 135, 245, 0.7);
-  }
-  
-  .green-glow {
-    text-shadow: 0 0 10px rgba(126, 105, 171, 0.7);
-  }
-  
-  .gold-glow {
-    text-shadow: 0 0 10px rgba(229, 222, 255, 0.7);
-  }
-  
-  .theme-enhanced {
-    background-image: 
-      radial-gradient(circle at 20% 30%, rgba(155, 135, 245, 0.15) 0%, transparent 40%),
-      radial-gradient(circle at 70% 60%, rgba(126, 105, 171, 0.15) 0%, transparent 40%);
-  }
-  
-  .hover-travel-down::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background: linear-gradient(to bottom, rgba(155, 135, 245, 0.3), transparent);
-    transition: height 0.5s ease;
-    z-index: -1;
-    opacity: 0;
-  }
-  
-  .hover-travel-down:hover::after {
-    height: 100%;
-    opacity: 1;
-  }
-  
-  .hover-glow {
-    transition: text-shadow 0.3s ease, color 0.3s ease;
-  }
-  
-  .hover-glow:hover {
-    color: theme('colors.squidPink');
-    text-shadow: 0 0 15px rgba(155, 135, 245, 0.8);
-  }
-  
-  .hover-scale {
-    transition: transform 0.3s ease, filter 0.3s ease;
-  }
-  
-  .hover-scale:hover {
-    transform: scale(1.05);
-    filter: brightness(1.2);
   }
 }
 
@@ -181,71 +117,6 @@
   opacity: 1;
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  25% {
-    transform: translateY(-10px) rotate(2deg);
-  }
-  50% {
-    transform: translateY(-15px) rotate(5deg);
-  }
-  75% {
-    transform: translateY(-7px) rotate(3deg);
-  }
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-}
-
-@keyframes wiggle {
-  0%, 100% {
-    transform: rotate(-3deg);
-  }
-  50% {
-    transform: rotate(3deg);
-  }
-}
-
-/* New animations */
-@keyframes pulse-slow {
-  0%, 100% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 0.8;
-  }
-}
-
-@keyframes sparkle {
-  0%, 100% {
-    opacity: 0.5;
-    filter: brightness(1);
-  }
-  50% {
-    opacity: 1;
-    filter: brightness(1.5);
-  }
-}
-
 /* Custom scroll behavior */
 html {
   scroll-behavior: smooth;
@@ -260,10 +131,10 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #9b87f5;
+  background: #FF0087;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #7E69AB;
+  background: #cc006c;
 }
