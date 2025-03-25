@@ -21,7 +21,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
-        heading: ["Montserrat", "sans-serif"],
+        heading: ["Game Of Squids", "sans-serif"],
+        squid: ["Game Of Squids", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

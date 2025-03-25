@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Star, Heart, Sparkle, CircleDot, Triangle, X, Zap, Crown, Flower, Music, Flame, Rocket } from 'lucide-react';
+import { Star, Heart, Sparkle, CircleDot, Triangle, X, Circle, Square } from 'lucide-react';
 
 const Doodle = ({ 
   icon, 
@@ -32,25 +32,20 @@ const Doodle = ({
 };
 
 const Doodles = () => {
-  // Expanded array of doodle configurations with more variety
+  // Squid Game inspired shapes - circle, triangle, square, plus some extras
   const doodles = [
-    { Icon: Star, color: 'rgba(255, 0, 135, 0.7)', size: 24, top: '15%', left: '10%' },
-    { Icon: Heart, color: 'rgba(21, 245, 186, 0.7)', size: 28, top: '75%', right: '15%' },
-    { Icon: Sparkle, color: 'rgba(255, 215, 0, 0.7)', size: 22, top: '30%', right: '10%' },
-    { Icon: CircleDot, color: 'rgba(255, 0, 135, 0.7)', size: 18, bottom: '20%', left: '20%' },
-    { Icon: Triangle, color: 'rgba(21, 245, 186, 0.7)', size: 26, top: '50%', left: '5%' },
-    { Icon: X, color: 'rgba(255, 215, 0, 0.7)', size: 20, bottom: '30%', right: '5%' },
-    { Icon: Zap, color: 'rgba(255, 0, 135, 0.7)', size: 24, top: '60%', left: '30%' },
-    { Icon: Crown, color: 'rgba(255, 215, 0, 0.8)', size: 30, top: '10%', right: '25%' },
-    { Icon: Star, color: 'rgba(21, 245, 186, 0.7)', size: 16, bottom: '15%', right: '30%' },
-    { Icon: Sparkle, color: 'rgba(255, 0, 135, 0.7)', size: 20, top: '35%', left: '25%' },
-    // New doodles with different icons and positions
-    { Icon: Flower, color: 'rgba(255, 0, 135, 0.7)', size: 26, top: '22%', left: '40%' },
-    { Icon: Music, color: 'rgba(21, 245, 186, 0.7)', size: 22, bottom: '40%', right: '45%' },
-    { Icon: Flame, color: 'rgba(255, 215, 0, 0.7)', size: 28, top: '70%', right: '20%' },
-    { Icon: Rocket, color: 'rgba(255, 0, 135, 0.7)', size: 32, bottom: '25%', left: '15%' },
-    { Icon: Crown, color: 'rgba(21, 245, 186, 0.7)', size: 20, top: '45%', right: '35%' },
-    { Icon: Zap, color: 'rgba(255, 215, 0, 0.7)', size: 18, bottom: '60%', left: '18%' },
+    { Icon: Circle, color: 'rgba(255, 0, 135, 0.7)', size: 32, top: '15%', left: '10%' },
+    { Icon: Triangle, color: 'rgba(21, 245, 186, 0.7)', size: 32, top: '75%', right: '15%' },
+    { Icon: Square, color: 'rgba(255, 215, 0, 0.7)', size: 32, top: '30%', right: '10%' },
+    { Icon: X, color: 'rgba(255, 0, 135, 0.7)', size: 24, bottom: '20%', left: '20%' },
+    { Icon: Circle, color: 'rgba(21, 245, 186, 0.7)', size: 22, top: '50%', left: '5%' },
+    { Icon: Triangle, color: 'rgba(255, 215, 0, 0.7)', size: 28, bottom: '30%', right: '5%' },
+    { Icon: Square, color: 'rgba(255, 0, 135, 0.7)', size: 30, top: '60%', left: '30%' },
+    { Icon: Circle, color: 'rgba(255, 215, 0, 0.8)', size: 36, top: '10%', right: '25%' },
+    { Icon: Star, color: 'rgba(21, 245, 186, 0.7)', size: 20, bottom: '15%', right: '30%' },
+    { Icon: Triangle, color: 'rgba(255, 0, 135, 0.7)', size: 26, top: '35%', left: '25%' },
+    { Icon: Square, color: 'rgba(21, 245, 186, 0.7)', size: 28, bottom: '40%', right: '45%' },
+    { Icon: X, color: 'rgba(255, 215, 0, 0.7)', size: 22, top: '70%', right: '20%' },
   ];
 
   return (
