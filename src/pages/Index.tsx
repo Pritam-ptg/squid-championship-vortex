@@ -8,12 +8,10 @@ import OrganizersSection from "@/components/OrganizersSection";
 import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
-import RetentionDashboard from "@/components/RetentionDashboard";
-import SquidGameTheme from "@/components/SquidGameTheme";
+import Doodles from "@/components/Doodles";
 
 const Index = () => {
   useEffect(() => {
-    // Reveal animation for elements as they scroll into view
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -26,27 +24,6 @@ const Index = () => {
       observer.observe(el);
     });
 
-    // Random movement for floating geometric shapes
-    const shapes = document.querySelectorAll(".geometric-shape");
-    shapes.forEach(shape => {
-      const randomX = Math.random() * 20 - 10; // Random value between -10 and 10
-      const randomY = Math.random() * 20 - 10;
-      const randomDelay = Math.random() * 5;
-      const randomDuration = 5 + Math.random() * 5;
-      
-      shape.animate([
-        { transform: `translate(0, 0)` },
-        { transform: `translate(${randomX}px, ${randomY}px)` },
-        { transform: `translate(0, 0)` }
-      ], {
-        duration: randomDuration * 1000,
-        iterations: Infinity,
-        direction: 'alternate',
-        easing: 'ease-in-out',
-        delay: randomDelay * 1000
-      });
-    });
-
     return () => {
       document.querySelectorAll(".reveal").forEach((el) => {
         observer.unobserve(el);
@@ -55,11 +32,15 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="theme-enhanced bg-gradient-to-br from-dark via-squidDarkBlue to-dark text-white min-h-screen overflow-x-hidden">
+      {/* Ambient background elements */}
+      <div className="fixed inset-0 bg-grid-pattern opacity-5 z-0"></div>
+      <div className="fixed top-0 right-0 w-1/3 h-1/3 bg-squidPink/5 rounded-full filter blur-[120px] animate-pulse-slow z-0"></div>
+      <div className="fixed bottom-0 left-0 w-1/3 h-1/3 bg-squidGreen/5 rounded-full filter blur-[120px] animate-pulse-slow z-0"></div>
+      
+      <Doodles />
       <Navigation />
-      <SquidGameTheme />
       <HeroSection />
-      <RetentionDashboard />
       <AboutSection />
       <EventsSection />
       <SponsorsSection />

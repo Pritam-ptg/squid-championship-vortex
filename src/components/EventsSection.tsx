@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Brain, FileCode, Dice1, Mic, Star, Users, LayoutGrid, Bug, Lock } from 'lucide-react';
+import { Brain, FileCode, Dice1, Mic, Star, Users, LayoutGrid, Bug, Lock, Sparkle } from 'lucide-react';
 
 type Event = {
   id: number;
@@ -109,6 +109,14 @@ const EventsSection = () => {
       <div className="absolute top-0 right-0 w-80 h-80 bg-squidPink/10 rounded-full filter blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-squidGreen/10 rounded-full filter blur-3xl"></div>
       
+      {/* Animated elements */}
+      <div className="absolute top-[15%] left-[10%] opacity-30 animate-[float_8s_ease-in-out_infinite]">
+        <Sparkle className="text-squidPink w-10 h-10" />
+      </div>
+      <div className="absolute bottom-[20%] right-[15%] opacity-30 animate-[float_10s_ease-in-out_infinite]">
+        <Sparkle className="text-squidGreen w-10 h-10" />
+      </div>
+      
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16 reveal">
           <div className="inline-block px-3 py-1 mb-6 bg-white/5 rounded-full border border-white/10 text-squidPink text-sm">
@@ -116,7 +124,7 @@ const EventsSection = () => {
           </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 text-white">
-            Three Days of <span className="text-squidGreen">Epic</span> Challenges
+            Three Days of <span className="text-squidGreen green-glow">Epic</span> Challenges
           </h2>
           
           <p className="text-lg text-white/80 max-w-3xl mx-auto">
@@ -150,7 +158,7 @@ const EventsSection = () => {
             <div
               key={event.id}
               className={cn(
-                "glass-card rounded-lg overflow-hidden transition-all duration-500 group",
+                "glass-card rounded-lg overflow-hidden transition-all duration-500 group cursor-pointer hover:translate-y-[-5px]",
                 expandedEvent === event.id ? "md:col-span-2 md:row-span-2" : "",
                 `hover:border-${event.color}/50`
               )}
@@ -158,12 +166,12 @@ const EventsSection = () => {
             >
               <div className="p-6">
                 <div className="flex justify-between items-start mb-6">
-                  <div className={`w-12 h-12 rounded-full bg-${event.color}/20 flex items-center justify-center`}>
+                  <div className={`w-12 h-12 rounded-full bg-${event.color}/20 flex items-center justify-center text-${event.color} group-hover:animate-[pulse_1.5s_infinite]`}>
                     {event.icon}
                   </div>
                   <span className="text-sm text-white/60">{event.time}</span>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">{event.title}</h3>
+                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-squidPink transition-colors duration-300">{event.title}</h3>
                 <p className={cn(
                   "text-white/70 transition-all duration-500",
                   expandedEvent === event.id ? "max-h-96" : "max-h-0 overflow-hidden opacity-0 md:group-hover:max-h-96 md:group-hover:opacity-100"
