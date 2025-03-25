@@ -8,6 +8,8 @@ import OrganizersSection from "@/components/OrganizersSection";
 import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
+import RetentionDashboard from "@/components/RetentionDashboard";
+import SquidGameTheme from "@/components/SquidGameTheme";
 
 const Index = () => {
   useEffect(() => {
@@ -55,7 +57,9 @@ const Index = () => {
   return (
     <div className="overflow-x-hidden">
       <Navigation />
+      <SquidGameTheme />
       <HeroSection />
+      <RetentionDashboard />
       <AboutSection />
       <EventsSection />
       <SponsorsSection />

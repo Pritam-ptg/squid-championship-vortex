@@ -37,23 +37,23 @@ const CountdownTimer = ({ targetDate }: CountdownProps) => {
   }, [targetDate]);
   
   return (
-    <div className="flex flex-row space-x-2 md:space-x-4 justify-center">
-      <div className="countdown-box">
+    <div className="flex flex-row space-x-4 md:space-x-6 justify-center">
+      <div className="squid-box countdown-box squid-pulse">
         <span className="countdown-number">{timeLeft.days}</span>
         <span className="countdown-label">Days</span>
       </div>
       
-      <div className="countdown-box">
+      <div className="squid-box countdown-box squid-pulse">
         <span className="countdown-number">{timeLeft.hours}</span>
         <span className="countdown-label">Hours</span>
       </div>
       
-      <div className="countdown-box">
+      <div className="squid-box countdown-box squid-pulse">
         <span className="countdown-number">{timeLeft.minutes}</span>
         <span className="countdown-label">Minutes</span>
       </div>
       
-      <div className="countdown-box">
+      <div className="squid-box countdown-box squid-pulse">
         <span className="countdown-number">{timeLeft.seconds}</span>
         <span className="countdown-label">Seconds</span>
       </div>
