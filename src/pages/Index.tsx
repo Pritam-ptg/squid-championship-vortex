@@ -11,6 +11,7 @@ import Navigation from "@/components/Navigation";
 
 const Index = () => {
   useEffect(() => {
+    // Reveal animation for elements as they scroll into view
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -23,6 +24,27 @@ const Index = () => {
       observer.observe(el);
     });
 
+    // Random movement for floating geometric shapes
+    const shapes = document.querySelectorAll(".geometric-shape");
+    shapes.forEach(shape => {
+      const randomX = Math.random() * 20 - 10; // Random value between -10 and 10
+      const randomY = Math.random() * 20 - 10;
+      const randomDelay = Math.random() * 5;
+      const randomDuration = 5 + Math.random() * 5;
+      
+      shape.animate([
+        { transform: `translate(0, 0)` },
+        { transform: `translate(${randomX}px, ${randomY}px)` },
+        { transform: `translate(0, 0)` }
+      ], {
+        duration: randomDuration * 1000,
+        iterations: Infinity,
+        direction: 'alternate',
+        easing: 'ease-in-out',
+        delay: randomDelay * 1000
+      });
+    });
+
     return () => {
       document.querySelectorAll(".reveal").forEach((el) => {
         observer.unobserve(el);
@@ -31,7 +53,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="bg-dark text-white min-h-screen overflow-x-hidden">
+    <div className="overflow-x-hidden">
       <Navigation />
       <HeroSection />
       <AboutSection />

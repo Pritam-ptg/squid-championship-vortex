@@ -22,6 +22,7 @@ export default {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
         heading: ["Montserrat", "sans-serif"],
+        orbitron: ["Orbitron", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -67,15 +68,34 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Squid Game + Championship theme colors
-        squidPink: "#FF0087",
-        squidGreen: "#15F5BA",
-        squidDarkBlue: "#081B2E",
-        championGold: "#FFD700",
-        championSilver: "#C0C0C0",
-        championBronze: "#CD7F32",
-        dark: "#0E1117",
-        darkAccent: "#181A20",
+        // DevArena theme colors
+        purple: {
+          100: "#E9DAFF",
+          200: "#D3B5FF",
+          300: "#BC8FFF",
+          400: "#A66AFF",
+          500: "#8A4BF2",
+          600: "#7032DA",
+          700: "#5820C2",
+          800: "#4012AA",
+          900: "#2A0892",
+        },
+        blue: {
+          100: "#D6E4FF",
+          200: "#ADC8FF",
+          300: "#84ACFF",
+          400: "#5B90FF",
+          500: "#3274FF",
+          600: "#1A5CE6",
+          700: "#0246CC",
+          800: "#0032B3",
+          900: "#001F99",
+        },
+        dark: "#090D14",
+        darkAccent: "#1A142A",
+      },
+      backgroundImage: {
+        'grid-pattern': "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -113,10 +133,10 @@ export default {
         },
         "pulse-glow": {
           "0%, 100%": { 
-            boxShadow: "0 0 10px rgba(255, 0, 135, 0.5), 0 0 20px rgba(255, 0, 135, 0.3)" 
+            boxShadow: "0 0 10px rgba(138, 75, 242, 0.5), 0 0 20px rgba(138, 75, 242, 0.3)" 
           },
           "50%": { 
-            boxShadow: "0 0 20px rgba(255, 0, 135, 0.8), 0 0 40px rgba(255, 0, 135, 0.5)" 
+            boxShadow: "0 0 20px rgba(138, 75, 242, 0.8), 0 0 40px rgba(138, 75, 242, 0.5)" 
           },
         },
         "float": {
